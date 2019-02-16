@@ -4,18 +4,24 @@ import { connect } from 'react-redux';
 
 import TextComponent from '../../components/Bottom/Text';
 
+import Camera from 'react-native-camera';
+
 export class TextContainer extends Component {
 
     takePhoto = () => {
-        alert('Take moon');
+      this.camera.capture()
     }
 
     render() {
       const text = '실제 달 찍기';
 
       return (
-          <TextComponent text={text}
-                         takePhoto={this.takePhoto}/>
+          <Camera ref={(cam) => {
+                        this.camera = cam;
+                  }}>
+            <TextComponent text={text}
+                           takePhoto={this.takePhoto}/>
+          </Camera>
       );
     }
 }
