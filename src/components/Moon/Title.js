@@ -7,8 +7,8 @@ export default class Title extends Component {
   render() {
     const { title } = this.props;
     return (
-      <View>
-        <Text>
+      <View style={styles.container}>
+        <Text style={styles.titleText}>
           {title}
         </Text>
       </View>
@@ -17,5 +17,15 @@ export default class Title extends Component {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    width: '100%',
+    height: '33%',
 
+    backgroundColor: 'blue'
+  },
+  titleText: {
+    textAlign: 'center',
+    fontSize: 30,
+    paddingTop: '30%'
+  }
 });

@@ -9,41 +9,44 @@ import * as MoonActions from '../../reducers/modules/moon';
 const cheerio = require('react-native-cheerio');
 
 export class ImageContainer extends Component {
-    componentDidMount = () => {
-      this.loadWeb();
-    }
 
-    loadWeb = async () => {
-      let url = 'https://astro.kasi.re.kr',
-          page = '/life/pageView/7';
+  componentWillMount = () => {
+    this.loadWeb();
+  }
 
-      let searchUrl = url + page;
-      let response = await fetch(searchUrl);
+  loadWeb = async () => {
+    let url = 'https://astro.kasi.re.kr',
+        page = '/life/pageView/7';
 
-      let htmlString = await response.text();
-      let $ = cheerio.load(htmlString); 
+    let searchUrl = url + page;
+    let response = await fetch(searchUrl);
 
-      let imageList = $('div img', $('.moon'));
+    let htmlString = await response.text();
+    let $ = cheerio.load(htmlString); 
 
-      let nowTime = new Date(),
-          nowDate = nowTime.getDate();
+    let imageList = $('div img', $('.moon'));
 
-      let imageSrc = url + imageList[nowDate].attribs.src;
+    let nowTime = new Date(),
+        nowDate = nowTime.getDate();
 
-      this.props.moonActions.setImage(imageSrc);
-    }
+    let imageSrc = url + imageList[nowDate].attribs.src;
 
-    render() {
-      const { imageSrc } = this.props;
+    this.props.moonActions.setImage(imageSrc);
+  }
 
-      return (
-          <ImageComponent imageSrc={imageSrc}/>
-      );
-    }
+  render() {
+    const { imageSrc, userSrc } = this.props;
+
+    return (
+      <ImageComponent userSrc={userSrc}
+                      imageSrc={imageSrc}/>
+    );
+  }
 }
 
 const mapStateToProps = (state, ownProps) => ({
-    imageSrc: state.moon.get('src')
+    imageSrc: state.moon.get('src'),
+    userSrc: state.moon.get('userSrc')
 });
 
 const mapDispatchToProps = (dispatch) => ({
