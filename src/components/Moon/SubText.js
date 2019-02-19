@@ -9,10 +9,7 @@ export default class SubText extends Component {
     return (
       <View style={styles.container}>
         <TouchableOpacity onPress={takePhoto}>
-          <Text>
-            {text}
-          </Text>
-          <Text>
+          <Text style={styles.text}>
             {subText}
           </Text>
         </TouchableOpacity>
@@ -24,10 +21,12 @@ export default class SubText extends Component {
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    height: '33%',
-    justifyContent: 'center',
-    alignItems: 'center',
-
+    height: '20%',
     backgroundColor: 'red'
   },
+  text: {
+    width: '100%',
+    textAlign: 'right',
+    paddingRight: '5%'
+  }
 });

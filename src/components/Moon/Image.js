@@ -107,7 +107,6 @@ export default class ImageComponent extends Component {
   takeScreenShot = () => {
     this.refs.viewShot.capture().then((uri) => {
       let newUri = 'file://' + uri;
-      console.log("URI: " + newUri);
       CameraRoll.saveToCameraRoll(uri);
     }, (error) => {
       console.log('Snap shot error', error);
@@ -144,8 +143,8 @@ export default class ImageComponent extends Component {
         </ViewShot>
         <View>
           <TouchableOpacity onPress={this.takeScreenShot}>
-            <Text>
-              스샷 찍기
+            <Text style={styles.imageBottomText}>
+              앨범에 저장
             </Text>
           </TouchableOpacity>
         </View>
@@ -161,7 +160,7 @@ export default class ImageComponent extends Component {
   setImageSize = (userImage) => {
     Image.getSize(userImage, (width, height) => {
       let deviceWidth = Dimensions.get('window').width,
-          imageWidth = deviceWidth * 0.8,
+          imageWidth = deviceWidth * 0.9,
           imageHeight = imageWidth * height / width;
 
       this.setState({
@@ -202,7 +201,7 @@ export default class ImageComponent extends Component {
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    height: '33%',
+    height: '60%',
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'yellow'
@@ -210,7 +209,7 @@ const styles = StyleSheet.create({
   titleText: {
     textAlign: 'center',
     fontSize: 20,
-    paddingTop: '10%'
+    paddingTop: '5%'
   },
   imageBackground: {
     overflow: 'hidden',
@@ -220,4 +219,9 @@ const styles = StyleSheet.create({
     width: 70,
     height: 70,
   },
+  imageBottomText: {
+    width: '100%',
+    paddingTop: '5%',
+    textAlign: 'right'
+  }
 });

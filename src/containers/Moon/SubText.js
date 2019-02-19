@@ -9,15 +9,9 @@ import SubTextComponent from '../../components/Moon/SubText';
 
 export class SubTextContainer extends Component {
     takePhoto = () => {
-      const options = {
-        title: 'Select Avatar',
-        storageOptions: {
-          skipBackup: true,
-          path: 'images',
-        },
-      };
+      const options = {quality: 100};
 
-      ImagePicker.showImagePicker(options, (response) => {
+      ImagePicker.launchImageLibrary(options, (response) => {
         console.log('Response = ', response);
 
         if (response.didCancel) {
@@ -33,7 +27,7 @@ export class SubTextContainer extends Component {
 
     render() {
       const text = '실제 모양과 조금 다를 수 있습니다.',
-            subText = '실제 달 찍기'
+            subText = '<<실제 달 찍기>>'
 
       return (
           <SubTextComponent text={text}
