@@ -134,6 +134,8 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-store-photos-album')
+    implementation project(':react-native-view-shot')
     implementation project(':react-native-image-picker')
     implementation project(':react-native-camera')
     implementation fileTree(dir: "libs", include: ["*.jar"])

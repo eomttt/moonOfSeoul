@@ -22,7 +22,7 @@ export class ImageContainer extends Component {
     let response = await fetch(searchUrl);
 
     let htmlString = await response.text();
-    let $ = cheerio.load(htmlString); 
+    let $ = cheerio.load(htmlString);
 
     let imageList = $('div img', $('.moon'));
 

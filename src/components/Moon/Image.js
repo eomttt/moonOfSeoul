@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View,
          TouchableOpacity, Linking, Image,
          PanResponder, Animated, ImageBackground,
-         Dimensions } from 'react-native';
+         Dimensions, CameraRoll } from 'react-native';
+
+import ViewShot from 'react-native-view-shot';
+import CameraRollExtended from 'react-native-store-photos-album';
 
 
 export default class ImageComponent extends Component {
@@ -101,7 +104,17 @@ export default class ImageComponent extends Component {
     this.beforeDistance = nowDistance;
   }
 
-  setImage() {
+  takeScreenShot = () => {
+    this.refs.viewShot.capture().then((uri) => {
+      let newUri = 'file://' + uri;
+      console.log("URI: " + newUri);
+      CameraRoll.saveToCameraRoll(uri);
+    }, (error) => {
+      console.log('Snap shot error', error);
+    });
+  }
+
+  setImage = () => {
     if (!!this.props.imageSrc) {
       return (
         this.renderImage()
@@ -115,17 +128,28 @@ export default class ImageComponent extends Component {
     }
   }
 
-  renderImage() {
+  renderImage = () => {
     if (!!this.props.userSrc) {
       this.setImageSize(this.props.userSrc);
       return (
-        <ImageBackground style={[styles.imageBackground,
-                                 {width: this.state.userImageWidth,
-                                  height: this.state.userImageHeight}
-                               ]}
-                         source={{uri: this.props.userSrc}}>
-          {this.renderMoonImage()}
-        </ImageBackground>
+        <View>
+        <ViewShot ref="viewShot" options={{ format: "jpg", quality: 0.9 }}>
+          <ImageBackground style={[styles.imageBackground,
+                                   {width: this.state.userImageWidth,
+                                    height: this.state.userImageHeight}
+                                 ]}
+                           source={{uri: this.props.userSrc}}>
+            {this.renderMoonImage()}
+          </ImageBackground>
+        </ViewShot>
+        <View>
+          <TouchableOpacity onPress={this.takeScreenShot}>
+            <Text>
+              스샷 찍기
+            </Text>
+          </TouchableOpacity>
+        </View>
+        </View>
       )
     } else {
       return (
@@ -134,7 +158,7 @@ export default class ImageComponent extends Component {
     }
   }
 
-  setImageSize(userImage) {
+  setImageSize = (userImage) => {
     Image.getSize(userImage, (width, height) => {
       let deviceWidth = Dimensions.get('window').width,
           imageWidth = deviceWidth * 0.8,
@@ -147,7 +171,7 @@ export default class ImageComponent extends Component {
     });
   }
 
-  renderMoonImage() {
+  renderMoonImage = () => {
     // Destructure the value of pan from the state
     let { pan, scale } = this.state;
 

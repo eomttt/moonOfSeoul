@@ -25,11 +25,11 @@ export class SubTextContainer extends Component {
         } else if (response.error) {
           console.log('ImagePicker Error: ', response.error);
         } else {
-          console.log('Image src', response.uri);
+          console.log('Image src: ' + response.uri);
           this.props.moonActions.setUserImage(response.uri)
         }
       });
-    }    
+    }
 
     render() {
       const text = '실제 모양과 조금 다를 수 있습니다.',
