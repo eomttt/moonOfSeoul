@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View,
          TouchableOpacity, Linking, Image,
-         PanResponder, Animated, ImageBackground } from 'react-native';
+         PanResponder, Animated, ImageBackground,
+         Dimensions } from 'react-native';
 
 
 export default class ImageComponent extends Component {
 
   state = {
     pan: new Animated.ValueXY(),
-    scale: new Animated.Value(1)
+    scale: new Animated.Value(1),
+    userImageWidth: 10,
+    userImageHeight: 10
   };
 
   beforeDistance = null;
@@ -46,7 +49,7 @@ export default class ImageComponent extends Component {
         if (touches.length > 1) {
           // Nothing
         } else {
-          this.setAnimated(this.nowScale + this.offsetScale, 3); 
+          this.setAnimated(this.nowScale + this.offsetScale, 3);
         }
       },
 
@@ -61,7 +64,7 @@ export default class ImageComponent extends Component {
             this.calculateScale(touches);
             this.setAnimated(this.nowScale);
           } else {
-            // Nothing       
+            // Nothing
           }
       }}),
 
@@ -77,7 +80,7 @@ export default class ImageComponent extends Component {
     Animated.spring(
       this.state.scale,
       { toValue: scale, friction: friction }
-    ).start();       
+    ).start();
   }
 
   calculateScale = (touches) => {
@@ -95,23 +98,14 @@ export default class ImageComponent extends Component {
       }
     }
 
-    this.beforeDistance = nowDistance;    
+    this.beforeDistance = nowDistance;
   }
 
-  setImage(imageStyle) {
+  setImage() {
     if (!!this.props.imageSrc) {
-      if (!!this.props.userSrc) {
-        return (
-          <ImageBackground style={styles.imageBackground}
-                           source={{uri: this.props.userSrc}}>
-            {this.renderImage(imageStyle)}
-          </ImageBackground>
-        ) 
-      } else {
-        return (
-          this.renderImage(imageStyle)
-        )       
-      }
+      return (
+        this.renderImage()
+      )
     } else {
       return (
         <Text style={styles.titleText}>
@@ -121,20 +115,39 @@ export default class ImageComponent extends Component {
     }
   }
 
-  renderImage(imageStyle) {
-    return (
-      <View style={styles.imageContainer}>
-        <Animated.View style={imageStyle} {...this._panResponder.panHandlers}>
-          <Image style={styles.image}
-                 source={{uri: this.props.imageSrc}}>
-          </Image>
-        </Animated.View>
-      </View>   
-    )
+  renderImage() {
+    if (!!this.props.userSrc) {
+      this.setImageSize(this.props.userSrc);
+      return (
+        <ImageBackground style={[styles.imageBackground,
+                                 {width: this.state.userImageWidth,
+                                  height: this.state.userImageHeight}
+                               ]}
+                         source={{uri: this.props.userSrc}}>
+          {this.renderMoonImage()}
+        </ImageBackground>
+      )
+    } else {
+      return (
+        this.renderMoonImage()
+      )
+    }
   }
 
-  render() {
-    const { imageSrc, userSrc } = this.props;
+  setImageSize(userImage) {
+    Image.getSize(userImage, (width, height) => {
+      let deviceWidth = Dimensions.get('window').width,
+          imageWidth = deviceWidth * 0.8,
+          imageHeight = imageWidth * height / width;
+
+      this.setState({
+        userImageWidth: imageWidth,
+        userImageHeight: imageHeight
+      });
+    });
+  }
+
+  renderMoonImage() {
     // Destructure the value of pan from the state
     let { pan, scale } = this.state;
 
@@ -145,8 +158,18 @@ export default class ImageComponent extends Component {
     let imageStyle = {transform: [{translateX}, {translateY}, {scale}]};
 
     return (
+      <Animated.View style={imageStyle} {...this._panResponder.panHandlers}>
+        <Image style={styles.image}
+               source={{uri: this.props.imageSrc}}>
+        </Image>
+      </Animated.View>
+    )
+  }
+
+  render() {
+    return (
       <View style={styles.container}>
-        {this.setImage(imageStyle)}
+        {this.setImage()}
       </View>
     );
   }
@@ -166,17 +189,11 @@ const styles = StyleSheet.create({
     paddingTop: '10%'
   },
   imageBackground: {
-    width: 'auto',
-    height: '100%',
     overflow: 'hidden',
-  },
-  imageContainer: {
-    width: 70,
-    height: 70,
-    overflow: 'hidden',
+    backgroundColor: 'black'
   },
   image: {
-    width: '100%',
-    height: '100%'
+    width: 70,
+    height: 70,
   },
 });
