@@ -9,7 +9,7 @@ import SubTextComponent from '../../components/Moon/SubText';
 
 export class SubTextContainer extends Component {
     takePhoto = () => {
-      const options = {quality: 100};
+      const options = {quality: 0.9};
 
       ImagePicker.launchImageLibrary(options, (response) => {
         console.log('Response = ', response);

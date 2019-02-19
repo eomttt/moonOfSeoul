@@ -132,22 +132,22 @@ export default class ImageComponent extends Component {
       this.setImageSize(this.props.userSrc);
       return (
         <View>
-        <ViewShot ref="viewShot" options={{ format: "jpg", quality: 0.9 }}>
-          <ImageBackground style={[styles.imageBackground,
-                                   {width: this.state.userImageWidth,
-                                    height: this.state.userImageHeight}
-                                 ]}
-                           source={{uri: this.props.userSrc}}>
-            {this.renderMoonImage()}
-          </ImageBackground>
-        </ViewShot>
-        <View>
-          <TouchableOpacity onPress={this.takeScreenShot}>
-            <Text style={styles.imageBottomText}>
-              앨범에 저장
-            </Text>
-          </TouchableOpacity>
-        </View>
+          <ViewShot ref="viewShot" options={{ format: "jpg", quality: 0.9 }}>
+            <ImageBackground style={[styles.imageBackground,
+                                     {width: this.state.userImageWidth,
+                                      height: this.state.userImageHeight}
+                                   ]}
+                             source={{uri: this.props.userSrc}}>
+              {this.renderMoonImage()}
+            </ImageBackground>
+          </ViewShot>
+          <View>
+            <TouchableOpacity onPress={this.takeScreenShot}>
+              <Text style={styles.imageBottomText}>
+                앨범에 저장
+              </Text>
+            </TouchableOpacity>
+          </View>
         </View>
       )
     } else {
@@ -201,7 +201,7 @@ export default class ImageComponent extends Component {
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    height: '60%',
+    // height: '60%',
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'yellow'
