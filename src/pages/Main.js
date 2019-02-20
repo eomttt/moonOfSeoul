@@ -5,7 +5,7 @@ import TitleContainer from '../containers/Moon/Title';
 import ImageContainer from '../containers/Moon/Image';
 import SubTextContainer from '../containers/Moon/SubText';
 
-import BottomTextContainer from '../containers/Bottom/Text';
+import AdmobComponent from '../components/Admob/Admob';
 
 const backImage = '../assets/imgs/night_sky.png';
 
@@ -22,6 +22,7 @@ export default class MainPage extends Component {
           <TitleContainer/>
           <ImageContainer/>
           <SubTextContainer/>
+          <AdmobComponent/>
         </ImageBackground>
     );
   }

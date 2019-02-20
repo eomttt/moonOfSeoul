@@ -107,7 +107,11 @@ export default class ImageComponent extends Component {
   takeScreenShot = () => {
     this.refs.viewShot.capture().then((uri) => {
       let newUri = 'file://' + uri;
-      CameraRoll.saveToCameraRoll(uri);
+      CameraRoll.saveToCameraRoll(uri).then(() => {
+        alert('성공적으로 앨범에 저장했어요.');
+      }).cath((error) => {
+        alert('앨범 저장에 실패했어요.');
+      });
     }, (error) => {
       console.log('Snap shot error', error);
     });
