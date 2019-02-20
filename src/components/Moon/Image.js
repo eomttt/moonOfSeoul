@@ -120,7 +120,7 @@ export default class ImageComponent extends Component {
       )
     } else {
       return (
-        <Text style={styles.titleText}>
+        <Text style={styles.imageContent}>
           이미지 가져오는 중...
         </Text>
         )
@@ -131,7 +131,7 @@ export default class ImageComponent extends Component {
     if (!!this.props.userSrc) {
       this.setImageSize(this.props.userSrc);
       return (
-        <View>
+        <View style={styles.backgroundContent}>
           <ViewShot ref="viewShot" options={{ format: "jpg", quality: 0.9 }}>
             <ImageBackground style={[styles.imageBackground,
                                      {width: this.state.userImageWidth,
@@ -152,7 +152,9 @@ export default class ImageComponent extends Component {
       )
     } else {
       return (
-        this.renderMoonImage()
+        <View style={styles.imageContent}>
+          {this.renderMoonImage()}
+        </View>
       )
     }
   }
@@ -201,15 +203,19 @@ export default class ImageComponent extends Component {
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    // height: '60%',
+    paddingTop: '10%',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'yellow'
   },
-  titleText: {
+  imageContent: {
+    height: '60%',
     textAlign: 'center',
     fontSize: 20,
-    paddingTop: '5%'
+    paddingTop: '5%',
+    color: 'white'
+  },
+  backgroundContent: {
+    paddingTop: '15%'
   },
   imageBackground: {
     overflow: 'hidden',
@@ -222,6 +228,7 @@ const styles = StyleSheet.create({
   imageBottomText: {
     width: '100%',
     paddingTop: '5%',
-    textAlign: 'right'
-  }
+    textAlign: 'right',
+    color: 'white'
+  },
 });

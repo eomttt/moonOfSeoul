@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 
 import TitleContainer from '../containers/Moon/Title';
 import ImageContainer from '../containers/Moon/Image';
 import SubTextContainer from '../containers/Moon/SubText';
 
 import BottomTextContainer from '../containers/Bottom/Text';
+
+const backImage = '../assets/imgs/night_sky.png';
 
 export default class MainPage extends Component {
 
@@ -15,19 +17,19 @@ export default class MainPage extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <TitleContainer/>
-        <ImageContainer/>
-        <SubTextContainer/>
-      </View>
+        <ImageBackground source={require(backImage)}
+                         style={styles.backgroundImage}>
+          <TitleContainer/>
+          <ImageContainer/>
+          <SubTextContainer/>
+        </ImageBackground>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
+  backgroundImage: {
     width: '100%',
     height: '100%',
-    backgroundColor: 'white',
   }
 });

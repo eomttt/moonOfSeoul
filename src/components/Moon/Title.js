@@ -19,12 +19,11 @@ export default class Title extends Component {
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    // height: '20%',
-    backgroundColor: 'blue'
   },
   titleText: {
     textAlign: 'center',
     fontSize: 30,
-    paddingTop: '30%'
+    paddingTop: '30%',
+    color: 'white'
   }
 });

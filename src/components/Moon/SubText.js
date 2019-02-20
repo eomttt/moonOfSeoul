@@ -21,12 +21,11 @@ export default class SubText extends Component {
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    // height: '20%',
-    backgroundColor: 'red'
   },
   text: {
     width: '100%',
     textAlign: 'right',
-    paddingRight: '5%'
+    paddingRight: '5%',
+    color: 'white'
   }
 });
