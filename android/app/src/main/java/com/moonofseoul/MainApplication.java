@@ -3,11 +3,10 @@ package com.moonofseoul;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
-import com.sbugert.rnadmob.RNAdMobPackage;
-import com.devialab.camerarollextended.CameraRollExtendedManager;
 import fr.greweb.reactnativeviewshot.RNViewShotPackage;
+import com.devialab.camerarollextended.CameraRollExtendedManager;
 import com.imagepicker.ImagePickerPackage;
-import org.reactnative.camera.RNCameraPackage;
+import com.sbugert.rnadmob.RNAdMobPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -28,11 +27,10 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new RNAdMobPackage(),
-            new CameraRollExtendedManager(),
             new RNViewShotPackage(),
+            new CameraRollExtendedManager(),
             new ImagePickerPackage(),
-            new RNCameraPackage()
+            new RNAdMobPackage()
       );
     }
 
