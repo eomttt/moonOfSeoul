@@ -9,9 +9,15 @@ import SubTextComponent from '../../components/Moon/SubText';
 
 export class SubTextContainer extends Component {
     takePhoto = () => {
-      const options = {quality: 1};
+      const options = {
+        title: 'Select Avatar',
+        storageOptions: {
+          skipBackup: true,
+          path: 'images',
+        },
+      };
 
-      ImagePicker.launchCameraAsync(options, (response) => {
+      ImagePicker.showImagePicker(options, (response) => {
         console.log('Response = ', response);
 
         if (response.didCancel) {

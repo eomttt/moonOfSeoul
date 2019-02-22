@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   titleText: {
     textAlign: 'center',
     fontSize: 30,
-    paddingTop: '30%',
+    paddingTop: '10%',
     color: 'white'
   }
 });

@@ -39,10 +39,10 @@
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
-		316B57ED1BC141B7A11BEB4F /* libRNAdMobManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED3FBF1B6CBB45A6834A7A30 /* libRNAdMobManager.a */; };
-		2E682E86F5DD4A0F965861C9 /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBFF8681F8524F2B87379137 /* libRNImagePicker.a */; };
-		13421651C1354338B4D14DBC /* libReactNativeStorePhotosAlbum.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 788489321E9A44708D672D92 /* libReactNativeStorePhotosAlbum.a */; };
-		E3CB92E031D7496393D106BC /* libRNViewShot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ED8D84503A642B6BAF92BA9 /* libRNViewShot.a */; };
+		569311319F7747D3AA8C657B /* libRNAdMobManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF0047F050F047E3B000155D /* libRNAdMobManager.a */; };
+		F81B98F47E7747C0A749AE99 /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C401AC5A455D44639CB9E982 /* libRNImagePicker.a */; };
+		DC854E5D41BF4C7DA6CBA617 /* libReactNativeStorePhotosAlbum.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 261D56C9CE634FDD84E7D1FF /* libReactNativeStorePhotosAlbum.a */; };
+		CC66FC6AE0A74B5E8D65888C /* libRNViewShot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02C49165472B49F4AA91CE6E /* libRNViewShot.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -350,14 +350,14 @@
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		A9975CBBAA20419282150A37 /* RNAdMobManager.xcodeproj */ = {isa = PBXFileReference; name = "RNAdMobManager.xcodeproj"; path = "../node_modules/react-native-admob/ios/RNAdMobManager.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		ED3FBF1B6CBB45A6834A7A30 /* libRNAdMobManager.a */ = {isa = PBXFileReference; name = "libRNAdMobManager.a"; path = "libRNAdMobManager.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
-		358CAB50090C4044BE09906B /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; name = "RNImagePicker.xcodeproj"; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		DBFF8681F8524F2B87379137 /* libRNImagePicker.a */ = {isa = PBXFileReference; name = "libRNImagePicker.a"; path = "libRNImagePicker.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
-		D557DC55D50F48468069DCC1 /* ReactNativeStorePhotosAlbum.xcodeproj */ = {isa = PBXFileReference; name = "ReactNativeStorePhotosAlbum.xcodeproj"; path = "../node_modules/react-native-store-photos-album/ios/ReactNativeStorePhotosAlbum.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		788489321E9A44708D672D92 /* libReactNativeStorePhotosAlbum.a */ = {isa = PBXFileReference; name = "libReactNativeStorePhotosAlbum.a"; path = "libReactNativeStorePhotosAlbum.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
-		9CD3472DD53F434BA291FC3A /* RNViewShot.xcodeproj */ = {isa = PBXFileReference; name = "RNViewShot.xcodeproj"; path = "../node_modules/react-native-view-shot/ios/RNViewShot.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		1ED8D84503A642B6BAF92BA9 /* libRNViewShot.a */ = {isa = PBXFileReference; name = "libRNViewShot.a"; path = "libRNViewShot.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		155C06F5A01A4CA6A8914F0C /* RNAdMobManager.xcodeproj */ = {isa = PBXFileReference; name = "RNAdMobManager.xcodeproj"; path = "../node_modules/react-native-admob/ios/RNAdMobManager.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		AF0047F050F047E3B000155D /* libRNAdMobManager.a */ = {isa = PBXFileReference; name = "libRNAdMobManager.a"; path = "libRNAdMobManager.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		D7F21BA3CA2D4D3893203F9E /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; name = "RNImagePicker.xcodeproj"; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		C401AC5A455D44639CB9E982 /* libRNImagePicker.a */ = {isa = PBXFileReference; name = "libRNImagePicker.a"; path = "libRNImagePicker.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		C4EA6312AE77423493E42666 /* ReactNativeStorePhotosAlbum.xcodeproj */ = {isa = PBXFileReference; name = "ReactNativeStorePhotosAlbum.xcodeproj"; path = "../node_modules/react-native-store-photos-album/ios/ReactNativeStorePhotosAlbum.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		261D56C9CE634FDD84E7D1FF /* libReactNativeStorePhotosAlbum.a */ = {isa = PBXFileReference; name = "libReactNativeStorePhotosAlbum.a"; path = "libReactNativeStorePhotosAlbum.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		E2771134CAE9481E9C73491C /* RNViewShot.xcodeproj */ = {isa = PBXFileReference; name = "RNViewShot.xcodeproj"; path = "../node_modules/react-native-view-shot/ios/RNViewShot.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		02C49165472B49F4AA91CE6E /* libRNViewShot.a */ = {isa = PBXFileReference; name = "libRNViewShot.a"; path = "libRNViewShot.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -386,10 +386,10 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				316B57ED1BC141B7A11BEB4F /* libRNAdMobManager.a in Frameworks */,
-				2E682E86F5DD4A0F965861C9 /* libRNImagePicker.a in Frameworks */,
-				13421651C1354338B4D14DBC /* libReactNativeStorePhotosAlbum.a in Frameworks */,
-				E3CB92E031D7496393D106BC /* libRNViewShot.a in Frameworks */,
+				569311319F7747D3AA8C657B /* libRNAdMobManager.a in Frameworks */,
+				F81B98F47E7747C0A749AE99 /* libRNImagePicker.a in Frameworks */,
+				DC854E5D41BF4C7DA6CBA617 /* libReactNativeStorePhotosAlbum.a in Frameworks */,
+				CC66FC6AE0A74B5E8D65888C /* libRNViewShot.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,10 +579,10 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
-				A9975CBBAA20419282150A37 /* RNAdMobManager.xcodeproj */,
-				358CAB50090C4044BE09906B /* RNImagePicker.xcodeproj */,
-				D557DC55D50F48468069DCC1 /* ReactNativeStorePhotosAlbum.xcodeproj */,
-				9CD3472DD53F434BA291FC3A /* RNViewShot.xcodeproj */,
+				155C06F5A01A4CA6A8914F0C /* RNAdMobManager.xcodeproj */,
+				D7F21BA3CA2D4D3893203F9E /* RNImagePicker.xcodeproj */,
+				C4EA6312AE77423493E42666 /* ReactNativeStorePhotosAlbum.xcodeproj */,
+				E2771134CAE9481E9C73491C /* RNViewShot.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";

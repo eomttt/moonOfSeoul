@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View,
          TouchableOpacity, Linking, Image,
          PanResponder, Animated, ImageBackground,
-         Dimensions, CameraRoll } from 'react-native';
+         Dimensions, CameraRoll, ScrollView } from 'react-native';
 
 import ViewShot from 'react-native-view-shot';
 import CameraRollExtended from 'react-native-store-photos-album';
@@ -165,9 +165,9 @@ export default class ImageComponent extends Component {
 
   setImageSize = (userImage) => {
     Image.getSize(userImage, (width, height) => {
-      let deviceWidth = Dimensions.get('window').width,
-          imageWidth = deviceWidth * 0.9,
-          imageHeight = imageWidth * height / width;
+      let deviceHeight = Dimensions.get('window').height,
+          imageHeight = deviceHeight * 0.6,
+          imageWidth = imageHeight * width / height;
 
       this.setState({
         userImageWidth: imageWidth,
@@ -197,9 +197,9 @@ export default class ImageComponent extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        {this.setImage()}
-      </View>
+        <View style={styles.container}>
+          {this.setImage()}
+        </View>
     );
   }
 }
@@ -207,22 +207,22 @@ export default class ImageComponent extends Component {
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    paddingTop: '10%',
+    height: '70%',
     justifyContent: 'center',
     alignItems: 'center',
+    overflow: 'hidden'
   },
   imageContent: {
-    height: '60%',
+    height: '100%',
+    paddingTop: '40%',
     textAlign: 'center',
     fontSize: 20,
-    paddingTop: '5%',
     color: 'white'
   },
   backgroundContent: {
-    paddingTop: '15%'
+    height: '100%',
   },
   imageBackground: {
-    overflow: 'hidden',
     backgroundColor: 'black'
   },
   image: {
@@ -231,8 +231,8 @@ const styles = StyleSheet.create({
   },
   imageBottomText: {
     width: '100%',
-    paddingTop: '5%',
     textAlign: 'right',
+    paddingTop: '3%',
     color: 'white'
   },
 });

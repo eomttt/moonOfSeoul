@@ -18,7 +18,7 @@ import MainPage from './pages/Main';
 
 const store = create();
 
-global.PUBLIC_MODE = false;
+global.PUBLIC_MODE = true;
 
 export default class App extends Component {
   render() {

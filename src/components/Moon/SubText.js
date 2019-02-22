@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
   text: {
     width: '100%',
     textAlign: 'right',
+    paddingTop: '5%',
     paddingRight: '5%',
     color: 'white'
   }

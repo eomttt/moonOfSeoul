@@ -17,13 +17,13 @@ export default class MainPage extends Component {
 
   render() {
     return (
-        <ImageBackground source={require(backImage)}
-                         style={styles.backgroundImage}>
+      <ImageBackground source={require(backImage)}
+                       style={styles.backgroundImage}>
           <TitleContainer/>
           <ImageContainer/>
           <SubTextContainer/>
           <AdmobComponent/>
-        </ImageBackground>
+      </ImageBackground>
     );
   }
 }
